@@ -16,7 +16,7 @@ use App\Http\Controllers\userprofileController;
 use App\Http\Controllers\datatransaksiController;
 
 Route::get('/', function () {
-    return view('login');
+    return redirect()->route('login');
 });
 
 // Route::middleware(['auth'])->group(function () {
