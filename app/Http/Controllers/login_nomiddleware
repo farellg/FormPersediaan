@@ -1,0 +1,46 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+
+class loginController extends Controller
+{
+    /**
+     * Show the login form.
+     */
+    public function showloginform()
+    {
+        return view('auth.login');
+    }
+
+    /**
+     * Handle login request.
+     */
+    public function login(Request $request)
+    {
+        $credentials = $request->only('email', 'password');
+
+        if (Auth::attempt($credentials)) {
+            // Setelah login, cek role
+            $user = Auth::user();
+            if ($user->role === 'admin') {
+                return redirect()->route('admin.index');
+            } else {
+                return redirect()->route('user.index');
+            }
+        }
+
+        return redirect()->route('login')->with('error', 'Email atau Password salah.');
+    }
+
+    /**
+     * Handle logout.
+     */
+    public function logout()
+    {
+        Auth::logout();
+        return redirect()->route('login');
+    }
+}
