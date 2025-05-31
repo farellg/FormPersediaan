@@ -18,7 +18,7 @@
     <div class="mb-3">
         <label for="image_barang" class="form-label">Image Barang</label>
         <div class="image-upload-wrapper">
-            <img id="imagePreview" src="/image/150.png" alt="Image Preview" class="img-thumbnail mb-2 m-auto" style="width: 100%; max-width: 150px; cursor: pointer;" />
+            <img id="imagePreview" src="{{ asset ('/image/150.png')}}" alt="Image Preview" class="img-thumbnail mb-2 m-auto" style="width: 100%; max-width: 150px; cursor: pointer;" />
             <input type="file" class="form-control" name="image_barang" value="{{ $data->image_barang }}" id="image_barang" accept="image/*" style="display: none;" onchange="previewImage(event)">
             <p class="text-muted text-center mt-2">Klik gambar untuk memilih foto barang</p>
         </div>
