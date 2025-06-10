@@ -20,7 +20,7 @@
 
         <div class="mb-3">
             <label for="profile_image">Profile Image</label>
-            <input type="file" id="profile_image" name="profile_image" class="form-control" value="{{ $user->profile_image}}" required>
+            <input type="file" id="profile_image" name="profile_image" class="form-control" value="{{ $user->profile_image}}">
         </div>
 
         <button type="submit" class="btn btn-primary">Save Changes</button>
