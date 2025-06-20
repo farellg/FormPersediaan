@@ -3,17 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg" href="{{ asset('/image/onlylogo.svg') }}">
 
     @php
 $titles = [
-    'admin.index' => 'Dashboard - Admin Form Kebutuhan ATK',
-    'databarang.index' => 'Data Barang - Admin Form Kebutuhan ATK',
-    'databarang.create' => 'Buat Data Barang - Admin Form Kebutuhan ATK',
-    'databarang.edit' => 'Edit Data Barang - Admin Form Kebutuhan ATK',
-    'datatransaksi.index' => 'Data Transaksi - Admin Form Kebutuhan ATK',
-    'datatransaksi.show' => 'Detail Transaksi - Admin Form Kebutuhan ATK',
-    'admin.profile.index' => 'Profile User - Admin Form Kebutuhan ATK',
-    'admin.profile.edit' => 'Edit Profile User - Admin Form Kebutuhan ATK',
+    'admin.index' => 'Dashboard - Admin Form Permohonan ATK',
+    'databarang.index' => 'Data Barang - Admin Form Permohonan ATK',
+    'databarang.create' => 'Buat Data Barang - Admin Form Permohonan ATK',
+    'databarang.edit' => 'Edit Data Barang - Admin Form Permohonan ATK',
+    'datatransaksi.index' => 'Data Transaksi - Admin Form Permohonan ATK',
+    'datatransaksi.show' => 'Detail Transaksi - Admin Form Permohonan ATK',
+    'admin.profile.index' => 'Profile User - Admin Form Permohonan ATK',
+    'admin.profile.edit' => 'Edit Profile User - Admin Form Permohonan ATK',
 ];
 
 $shortTitles = [
@@ -286,12 +287,12 @@ $navbarTitle = $shortTitles[$currentRoute] ?? 'Default Title';
             </form>    --}}
             <div class="dropdown">
                 <a href="#" class="d-flex align-items-center text-decoration-none" id="profileDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                    <span class="ms-2 text-dark">{{ Auth::user()->name }}</span>
                     <img src="{{ !empty(Auth::user()->profile_image) ? asset('storage/' . Auth::user()->profile_image) : asset('/image/default.jpg') }}"
                     alt="Profile"
                     width="40"
                     height="40"
                     class="rounded-circle ml-3">
-                <span class="ms-2 text-dark">{{ Auth::user()->name }}</span>
                 </a>
                 <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profileDropdown">
                     <li><a class="dropdown-item" href="{{ route('admin.profile.index') }}"><i class="fas fa-user me-2"></i>Profile</a></li>

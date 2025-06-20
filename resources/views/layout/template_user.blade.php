@@ -3,15 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg" href="{{ asset('/image/onlylogo.svg') }}">
+
 
     @php
     $titles = [
-        'user.index' => 'Dashboard - Form Kebutuhan ATK',
-        'form.index' => 'Keranjang - Form Kebutuhan ATK',
-        'form.edit' => 'Edit Form - Form Kebutuhan ATK',
-        'checkout.show' => 'Check out - Form Kebutuhan ATK',
-        'user.profile.index' => 'Profile - Form Kebutuhan ATK',
-        'user.profile.edit' => 'Edit Profile - Form Kebutuhan ATK',
+        'user.index' => 'Dashboard - Form Permohonan ATK',
+        'form.index' => 'Keranjang - Form Permohonan ATK',
+        'form.edit' => 'Edit Form - Form Permohonan ATK',
+        'checkout.show' => 'Check out - Form Permohonan ATK',
+        'user.profile.index' => 'Profile - Form Permohonan ATK',
+        'user.profile.edit' => 'Edit Profile - Form Permohonan ATK',
         // Tambahkan mapping route lainnya di sini
     ];
 
