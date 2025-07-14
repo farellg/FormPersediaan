@@ -254,23 +254,23 @@ class datatransaksiController extends Controller
     // return Excel::download(new datatransaksiExport, 'DataTransaksi.xlsx');
     // }
 
-    // public function detailtranexportPDF($id)
-    // {
-    //     $transaksi = Checkout::findOrFail($id); // Cari transaksi berdasarkan ID
-    //     $transaksi->items = is_string($transaksi->items)
-    //         ? json_decode($transaksi->items, true) // Pastikan `items` adalah array
-    //         : $transaksi->items;
+    public function detailtranexportPDF($id)
+    {
+        $transaksi = Checkout::findOrFail($id); // Cari transaksi berdasarkan ID
+        $transaksi->items = is_string($transaksi->items)
+            ? json_decode($transaksi->items, true) // Pastikan `items` adalah array
+            : $transaksi->items;
 
-    //     $transaksi->tanggal = Carbon::parse($transaksi->tanggal)->format('d-m-Y');
+        $transaksi->tanggal = Carbon::parse($transaksi->tanggal)->format('d-m-Y');
         
-    //     $pdf = PDF::loadView('admin.detailtran_exportpdf', [
-    //         'unit' => $transaksi->unit,
-    //         'tanggal' => $transaksi->tanggal,
-    //         'items' => $transaksi->items,
-    //     ]);
+        $pdf = PDF::loadView('admin.detailtran_exportpdf', [
+            'unit' => $transaksi->unit,
+            'tanggal' => $transaksi->tanggal,
+            'items' => $transaksi->items,
+        ]);
 
-    //     return $pdf->download('DetailDataTransaksi.pdf');
-    // }
+        return $pdf->download('DetailDataTransaksi.pdf');
+    }
 
     public function detailTranExportExcel($id)
     {
