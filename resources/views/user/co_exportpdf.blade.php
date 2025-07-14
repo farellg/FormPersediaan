@@ -68,6 +68,16 @@
                     <td>{{ $item['keterangan'] }}</td>
                 </tr>
             @endforeach
+            <!-- Tambahkan baris kosong jika data kurang dari 10 -->
+            @for ($i = count($items) + 1; $i <= 10; $i++)
+                <tr>
+                    <td>{{ $i }}</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            @endfor
         </tbody>
     </table>
     <!-- Footer Section -->
@@ -78,11 +88,16 @@
         </div>
         <div class="signature-block">
             <div>Petugas Gudang</div>
-            <div class="signature-space">(Kusdwiranto)</div>
+            <div class="signature-space">(Reffi Ichsan)</div>
         </div>
         <div class="signature-block">
             <div>Operator Persediaan</div>
             <div class="signature-space">(Aji Prastia)</div>
+        </div>
+        <div class="signature-block" style="width: 100%; margin-top: 3em;">
+            <div>Mengetahui</div>
+            <div>Kepala Sub Bagian Tata Usaha</div>
+            <div class="signature-space" style="margin-top: 5em;">(M. Arief Setyadi)</div>
         </div>
     </div>
 

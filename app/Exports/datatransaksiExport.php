@@ -92,7 +92,7 @@ class datatransaksiExport implements FromArray, WithHeadings, WithStyles, WithCo
                 $sheet->mergeCells('A2:D2');
                 $sheet->getStyle('A2')->applyFromArray([
                     'font' => ['bold' => true],
-                    'alignment' => ['horizontal' => 'left', 'vertical' => 'center'],
+                    'alignment' => ['horizontal' => 'right', 'vertical' => 'center'],
                 ]);
 
                 // Ambil baris terakhir setelah data lengkap

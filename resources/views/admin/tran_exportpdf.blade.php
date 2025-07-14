@@ -19,6 +19,11 @@
             text-align: center;
             margin-bottom: 2em;
         }
+        .tanggal-cetak {
+            text-align: right;
+            margin-bottom: 1.5em;
+            font-size: 14px;
+        }
     </style>
 </head>
 <body>

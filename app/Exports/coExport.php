@@ -136,7 +136,7 @@ class coExport implements FromArray, WithEvents
 
                 $row += 4; // Tambahkan spasi untuk tanda tangan
                 $sheet->setCellValue('B' . $row, '(........................................)');
-                $sheet->setCellValue('C' . $row, '(Reffi)');
+                $sheet->setCellValue('C' . $row, '(Reffi Ichsan)');
                 $sheet->setCellValue('D' . $row, '(Aji Prastia)');
 
                 $row += 3;

@@ -73,8 +73,8 @@
                 </tr>
             @endforeach
 
-            <!-- Tambahkan baris kosong jika data kurang dari 20 -->
-            @for ($i = count($items) + 1; $i <= 20; $i++)
+            <!-- Tambahkan baris kosong jika data kurang dari 10 -->
+            @for ($i = count($items) + 1; $i <= 10; $i++)
                 <tr>
                     <td>{{ $i }}</td>
                     <td></td>
@@ -94,7 +94,7 @@
         </div>
         <div class="signature-block">
             <div>Petugas Gudang</div>
-            <div class="signature-space">(Reffi)</div>
+            <div class="signature-space">(Reffi Ichsan)</div>
         </div>
         <div class="signature-block">
             <div>Operator Persediaan</div>

@@ -138,6 +138,6 @@ Route::get('/admin/profile', [profileController::class, 'index'])->name('admin.p
 
 Route::get('/user/profile', [userprofileController::class, 'index'])->name('user.profile.index');
 Route::get('/user/edit', [userprofileController::class, 'edit'])->name('user.profile.edit');
-Route::post('/user/update', [userprofileController::class, 'update'])->name('user.profile.update');
+Route::put('/user/update', [userprofileController::class, 'update'])->name('user.profile.update');
 
 

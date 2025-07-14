@@ -272,22 +272,22 @@ class datatransaksiController extends Controller
     //     return $pdf->download('DetailDataTransaksi.pdf');
     // }
 
-    // public function detailTranExportExcel($id)
-    // {
-    // $transaksi = Checkout::findOrFail($id); // Cari transaksi berdasarkan ID
-    // $transaksi->items = is_string($transaksi->items)
-    //     ? json_decode($transaksi->items, true)
-    //     : $transaksi->items;
+    public function detailTranExportExcel($id)
+    {
+    $transaksi = Checkout::findOrFail($id); // Cari transaksi berdasarkan ID
+    $transaksi->items = is_string($transaksi->items)
+        ? json_decode($transaksi->items, true)
+        : $transaksi->items;
 
-    // $transaksi->tanggal = Carbon::parse($transaksi->tanggal)->format('d-m-Y');
+    $transaksi->tanggal = Carbon::parse($transaksi->tanggal)->format('d-m-Y');
 
-    // $data = [
-    //     'unit' => $transaksi->unit,
-    //     'tanggal' => $transaksi->tanggal,
-    //     'items' => $transaksi->items,
-    // ];
+    $data = [
+        'unit' => $transaksi->unit,
+        'tanggal' => $transaksi->tanggal,
+        'items' => $transaksi->items,
+    ];
 
-    // return Excel::download(new detailtransaksiExport($data), 'DetailTransaksi.xlsx');
-    // }
+    return Excel::download(new detailtransaksiExport($data), 'DetailTransaksi.xlsx');
+    }
 
 }
