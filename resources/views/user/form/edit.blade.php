@@ -16,7 +16,7 @@
 
         <div class="mb-3">
             <label for="jumlah" class="form-label">Jumlah</label>
-            <input type="number" 
+            <input type="text" 
                    class="form-control" 
                    id="jumlah" 
                    name="jumlah" 
@@ -25,6 +25,7 @@
                    min="1"
                    max="{{ $item->saldo_disistem }}" 
             oninput="validateInput(this)">
+            <div id="error-jumlah" class="text-danger small mt-1"></div>
         </div>
 
         <div class="mb-3">

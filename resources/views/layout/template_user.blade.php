@@ -417,6 +417,31 @@
     }
 </script>
     
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const jumlahInput = document.getElementById('jumlah');;
+
+    // Listener input realtime
+    if (jumlahInput) {
+        jumlahInput.addEventListener('input', () => validateJumlah(jumlahInput, 'error-jumlah'));
+    }
+
+    // Validasi masing-masing field
+    function validateJumlah(input, errorId) {
+        const error = document.getElementById(errorId);
+        if (!input.value.trim()) {
+            error.textContent = 'Jumlah Wajib diisi';
+            input.classList.add('is-invalid');
+        } else if (isNaN(input.value)) {
+            error.textContent = 'Jumlah harus berupa angka';
+            input.classList.add('is-invalid');
+        } else {
+            error.textContent = '';
+            input.classList.remove('is-invalid');
+        }
+    }
+});
+</script>
 
 
 </body>

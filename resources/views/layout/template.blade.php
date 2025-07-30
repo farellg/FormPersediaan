@@ -496,6 +496,82 @@ $navbarTitle = $shortTitles[$currentRoute] ?? 'Default Title';
             form.submit();
         }
     </script>
+
+ 
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const kodeInput = document.getElementById('kode_barang');
+        const namaInput = document.getElementById('nama_barang');
+        const satuanInput = document.getElementById('satuan');
+        const saldoInput = document.getElementById('saldo_disistem');
+
+        // Listener input realtime
+        if (kodeInput) {
+            kodeInput.addEventListener('input', () => validateKode(kodeInput, 'error-kode_barang'));
+        }
+        if (namaInput) {
+            namaInput.addEventListener('input', () => validateNama(namaInput, 'error-nama_barang'));
+        }
+        if (satuanInput) {
+            satuanInput.addEventListener('input', () => validateSatuan(satuanInput, 'error-satuan'));
+        }
+        if (saldoInput) {
+            saldoInput.addEventListener('input', () => validateSaldo(saldoInput, 'error-saldo_disistem'));
+        }
+
+        // Validasi masing-masing field
+        function validateKode(input, errorId) {
+            const error = document.getElementById(errorId);
+            if (!input.value.trim()) {
+                error.textContent = 'Kode barang wajib diisi';
+                input.classList.add('is-invalid');
+            } else if (isNaN(input.value)) {
+                error.textContent = 'Kode barang harus berupa angka';
+                input.classList.add('is-invalid');
+            } else {
+                error.textContent = '';
+                input.classList.remove('is-invalid');
+            }
+        }
+
+        function validateNama(input, errorId) {
+            const error = document.getElementById(errorId);
+            if (!input.value.trim()) {
+                error.textContent = 'Nama barang wajib diisi';
+                input.classList.add('is-invalid');
+            } else {
+                error.textContent = '';
+                input.classList.remove('is-invalid');
+            }
+        }
+
+        function validateSatuan(input, errorId) {
+            const error = document.getElementById(errorId);
+            if (!input.value.trim()) {
+                error.textContent = 'Satuan wajib diisi';
+                input.classList.add('is-invalid');
+            } else {
+                error.textContent = '';
+                input.classList.remove('is-invalid');
+            }
+        }
+
+        function validateSaldo(input, errorId) {
+            const error = document.getElementById(errorId);
+            if (!input.value.trim()) {
+                error.textContent = 'Saldo di sistem wajib diisi';
+                input.classList.add('is-invalid');
+            } else if (isNaN(input.value)) {
+                error.textContent = 'Saldo di sistem harus berupa angka';
+                input.classList.add('is-invalid');
+            } else {
+                error.textContent = '';
+                input.classList.remove('is-invalid');
+            }
+        }
+    });
+</script>
+
         
 </body>
 </html>

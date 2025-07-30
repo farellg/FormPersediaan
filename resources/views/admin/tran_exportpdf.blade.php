@@ -27,7 +27,7 @@
     </style>
 </head>
 <body>
-    <h3>Laporan Data Transaksi</h3>
+    <h3>Laporan Permohonan Kebutuhan Barang ATK</h3>
     <div class="tanggal-cetak">
         Tanggal Cetak: {{ $tanggalCetak }}
     </div>

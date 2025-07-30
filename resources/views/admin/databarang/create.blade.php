@@ -9,7 +9,8 @@
     <a href='{{ url('admin/databarang') }}' class="btn btn-secondary mb-5"><i class="fas fa-arrow-left mr-2"></i>Kembali</a>
     <div class="mb-3">
         <label for="kode_barang" class="form-label">Kode Barang</label>
-        <input type="number" class="form-control" name='kode_barang' value="{{ Session::get('kode_barang') }}" kode_barang">
+        <input type="text" class="form-control" name="kode_barang" id="kode_barang" value="{{ Session::get('kode_barang') }}">
+        <div id="error-kode_barang" class="text-danger small mt-1"></div>
     </div>
     <div class="mb-3">
         <label for="image_barang" class="form-label">Image Barang</label>
@@ -22,14 +23,17 @@
     <div class="mb-3">
         <label for="nama_barang" class="form-label">Nama Barang</label>
         <input type="text" class="form-control" name='nama_barang' value="{{ Session::get('nama_barang') }}" id="nama_barang">
+        <div id="error-nama_barang" class="text-danger small mt-1"></div>
     </div>
     <div class="mb-3">
         <label for="satuan" class="form-label">Satuan</label>
         <input type="text" class="form-control" name='satuan' value="{{ Session::get('satuan') }}" id="satuan">
+        <div id="error-satuan" class="text-danger small mt-1"></div>
     </div>
     <div class="mb-3">
         <label for="saldo_disistem" class="form-label">Saldo Di Sistem</label>
         <input type="text" class="form-control" name='saldo_disistem' value="{{ Session::get('saldo_disistem') }}" id="saldo_disistem">
+        <div id="error-saldo_disistem" class="text-danger small mt-1"></div>
     </div>
     <div class="button-simpan right-0">
         <button type="submit" class="btn btn-primary" name="submit">Simpan</button>
